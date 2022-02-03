@@ -1,26 +1,20 @@
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 63.5708, lng: -19.2924},
-    zoom: 10,
-    mapTypeId: "satellite",
-    heading: 90,
-    tilt: 45,
-  });
-  // add listener to button
-  document.getElementById("rotate").addEventListener("click", autoRotate);
-}
-
-function rotate90() {
-  const heading = map.getHeading() || 0;
-
-  map.setHeading(heading + 90);
-}
-
-function autoRotate() {
-  // Determine if we're showing aerial imagery.
-  if (map.getTilt() !== 0) {
-    window.setInterval(rotate90, 3000);
+function initialize() {
+    const glacier = { lat: 63.5708, lng: -19.2924 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: glacier,
+      zoom: 10,
+    });
+    const panorama = new google.maps.StreetViewPanorama(
+      document.getElementById("pano"),
+      {
+        position: glacier,
+        pov: {
+          heading: 34,
+          pitch: 10,
+        },
+      }
+    );
+  
+    map.setStreetView(panorama);
   }
-}
+  

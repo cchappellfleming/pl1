@@ -15,28 +15,18 @@
             margin: 0;
             padding: 0;
             }
-            #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: "Roboto", "sans-serif";
-            line-height: 30px;
-            padding-left: 10px;
+
+            #map,
+            #pano {
+            float: left;
+            height: 100%;
+            width: 50%;
             }
           </style>
         </head>
         <body>
-          <div id="floating-panel">
-            <input type="button" value="Auto Rotate" id="rotate" />
-          </div>
-          <div id="map"></div>
-      
-          <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <div id="map"></div>
+            <div id="pano"></div>
           <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
             async
