@@ -14,22 +14,22 @@
 //     );
 //     map.setStreetView(panorama);
 //   }
-  function initialize() {
+function initialize() {
     const glacier = { lat: 63.5708, lng: -19.2924 };
     const map = new google.maps.Map(document.getElementById("map"), {
-      center: glacier,
-      zoom: 14,
+    center: glacier,
+    zoom: 14,
     });
     const panorama = new google.maps.StreetViewPanorama(
-      document.getElementById("pano"),
-      {
-        position: glacier,
+        document.getElementById("pano"),
+        {
+            position: glacier,
         pov: {
-          heading: 34,
-          pitch: 10,
+            heading: 34,
+            pitch: 10,
         },
-      }
+        }
     );
-  
+
     map.setStreetView(panorama);
-  }
+}
