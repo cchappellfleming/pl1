@@ -4,13 +4,15 @@ function initialize() {
       center: glacier,
       zoom: 10,
     });
-    const panorama = new google.maps.StreetViewPanorama(
-      document.getElementById("pano"),
+
+    const path = {lat: 63.498410145945954, lng: -19.397552790404397}
+    path = new google.maps.StreetViewPanorama(
+      document.getElementById("path"),
       {
-        position: glacier,
+        position: path,
         pov: {
-          heading: 34,
-          pitch: 10,
+          heading: 0,
+          pitch: 0,
         },
       }
     );
