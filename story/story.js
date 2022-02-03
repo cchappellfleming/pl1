@@ -9,10 +9,9 @@ function initialize() {
     const panorama = new google.maps.StreetViewPanorama(
       document.getElementById("path"),
       {
-        position: glacier,
+        position: glacier
       }
     );
-  
     map.setStreetView(panorama);
   }
   
